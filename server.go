@@ -12,11 +12,11 @@ import (
 func main() {
 	Config := make(map[string]string)
 
-	Config["url"] = "127.0.0.1"
+	Config["url"] = "ec2-3-216-221-31.compute-1.amazonaws.com"
 	Config["port"] = "5432"
-	Config["user"] = "postgres"
-	Config["password"] = "saikumar"
-	Config["db"] = "chat"
+	Config["user"] = "qzdiorjrtvqbyz"
+	Config["password"] = "521a5ad9cc01b09f06b81b6c9eed3eb7a8d0b00e077453085e587aaa3e8cdf90"
+	Config["db"] = "d91n7256lpp7sb"
 
 	db.ConnectToDB(Config)
 
@@ -30,7 +30,6 @@ func main() {
 
 	server := &http.Server{
 		Handler:      router,
-		Addr:         "127.0.0.1:8000",
 		WriteTimeout: 15 * time.Second,
 		ReadTimeout:  15 * time.Second,
 	}
