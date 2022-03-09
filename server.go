@@ -3,6 +3,9 @@ package main
 import (
 	db "chat/database"
 	"chat/handlers"
+	"fmt"
+	"os"
+
 	"github.com/gorilla/mux"
 
 	"net/http"
@@ -28,8 +31,16 @@ func main() {
 	router.HandleFunc("/sendmsg", handlers.SendMsgHandler)
 	router.HandleFunc("/getmsg", handlers.RecMsgHandler)
 
+	port :=os.Getenv("PORT")
+	// fmt.Println(port)
+	// return
+	if port==""{
+		port = "8000"
+	}
+	// fmt.Println(port)
 	server := &http.Server{
 		Handler:      router,
+		Addr:":"+port,
 		WriteTimeout: 15 * time.Second,
 		ReadTimeout:  15 * time.Second,
 	}
