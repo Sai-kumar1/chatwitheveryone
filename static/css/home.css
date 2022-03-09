@@ -1,0 +1,56 @@
+#recontainer{
+    width: 60%;
+    height: 20rem;
+    border: 3px solid black;
+    overflow: scroll;
+    border-radius: 10px;
+}
+msg{
+    
+    display: flex;
+    width: min-content;
+    float: right;
+
+}
+#containerrec{
+    width: 100%;
+    display: flex;
+    justify-content: left;
+}
+#containersend{
+    width: 100%;
+    display: flex;
+    justify-content: right;
+}
+#from{
+    color: red;
+    font-weight: bold;
+    font-size: 13px;
+    text-align:left;
+}
+#to{
+    color: red;
+    font-weight: bold;
+    font-size: 13px;
+    text-align:left;
+}
+#time{
+    color: blue;
+    font-size: 12px;
+    float: right;
+    margin-bottom: sticky;
+}
+#msg{
+    background-color: grey;
+    width: max-content;
+    border-radius: 4px;
+    padding: 5px;
+}
+#left{
+    width: fit-content;
+    
+}
+#right{
+    width: fit-content;
+    
+}

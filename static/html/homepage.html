@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>send and recieve</title>
+        <link rel="stylesheet" href="static/css/home.css">
+        <script src="static/js/ping.js"></script>
+    </head>
+    <body>
+        <h1>send and recieve</h1>
+        <div>
+            <form action="javascript:" onsubmit="sendmsg()">
+                <p>
+                    <label for="to">To:</label>
+                    <input type="text" name="to" id="sendto" />
+                </p>
+                <p>
+                    <label for="from">from:</label>
+                    <input type="text" name="from" id="recfrom" />
+                </p>
+                <p>
+                    <label for="message">Message:</label>
+                    <input name="message" id="message"/>
+                </p>
+                <p>
+                    <input type="submit" value="Send" id="submitbutton"/>
+                </p>
+            </form>
+        </div>
+        <div id="recontainer" >
+            
+        </div>
+    </body>
+</html>
