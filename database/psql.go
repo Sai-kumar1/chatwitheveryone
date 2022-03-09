@@ -22,14 +22,15 @@ type User struct {
 
 var psql *sql.DB
 
-func ConnectToDB(config map[string]string){
-	host := config["url"]
-	port := config["port"]
-	user := config["user"]
-	password := config["password"]
-	dbname := config["db"]
+func ConnectToDB(){
+	// for dev
+	// host := config["url"]
+	// port := config["port"]
+	// user := config["user"]
+	// password := config["password"]
+	// dbname := config["db"]
 
-	psqlConn := fmt.Sprintf("host=%s port=%s user=%s password=%s dbname=%s sslmode=disable", host, port, user, password, dbname)
+	psqlConn := "postgres://qzdiorjrtvqbyz:521a5ad9cc01b09f06b81b6c9eed3eb7a8d0b00e077453085e587aaa3e8cdf90@ec2-3-216-221-31.compute-1.amazonaws.com:5432/d91n7256lpp7sb"
 	var er error
 	psql, er = sql.Open("postgres", psqlConn)
 	if er!=nil{

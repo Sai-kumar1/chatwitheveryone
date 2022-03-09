@@ -3,7 +3,7 @@ package handlers
 import (
 	db "chat/database"
 	"encoding/json"
-	"fmt"
+	// "fmt"
 	"net/http"
 )
 
@@ -21,8 +21,7 @@ func SendMsgHandler(w http.ResponseWriter,r *http.Request){
 		var msg db.Message
 		er := json.NewDecoder(r.Body).Decode(&msg)
 		if er!=nil{
-			fmt.Println(er)
-			return
+			http.Error(w, er.Error(), http.StatusBadRequest)
 		}
 		db.InsertMessage(msg)
 	}
@@ -35,7 +34,6 @@ func RecMsgHandler(w http.ResponseWriter,r *http.Request){
 		er := json.NewDecoder(r.Body).Decode(&user)
 		if er != nil{
 			http.Error(w, er.Error(), http.StatusBadRequest)
-        	return
 		}
 		db.GetUserMessages(w,user)
 	}
