@@ -3,7 +3,7 @@ package main
 import (
 	db "chat/database"
 	"chat/handlers"
-	"fmt"
+	// "fmt"
 	"os"
 
 	"github.com/gorilla/mux"
