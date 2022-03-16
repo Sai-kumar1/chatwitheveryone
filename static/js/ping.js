@@ -8,7 +8,8 @@ function ping(){
             "Content-Type":"application/json",
             "Accept":"application/json",
         },
-        body:JSON.stringify(reqBody)
+        body:JSON.stringify(reqBody),
+        keepalive:true
     })
     .then((response) =>{
         return response.text();   
@@ -31,9 +32,10 @@ function ping(){
         </div>';
         }
         obj.scrollTop = obj.scrollHeight;
+        doPing = true;
     })
     .catch((err)=>{
-        console.log(err)
+        doPing = true;
     })
 }
 function sendmsg(){
@@ -57,7 +59,7 @@ function sendmsg(){
         obj.innerHTML += '<div id="containersend"> \
             <msg>\
                 <div id="left">\
-                    <p id="from">'+data["from"]+'</p>\
+                    <p id="from">'+data["to"]+'</p>\
                 </div>\
                 <div id="right">\
                     <p id="msg">'+data["message"]+'<span id="time">'+data["time"]+'</span></p>\
@@ -66,7 +68,24 @@ function sendmsg(){
         </div>';
         obj.scrollTop = obj.scrollHeight;
     })
+    document.getElementById("message").value = ""
 }
+
+var doPing = true
+
+function pingTheServer(){
+    ping();
+    document.getElementById("recfrom").readOnly = true
+    setInterval(function(){
+        if(doPing){
+            ping();
+            doPing = false;
+        }
+    },10000);
+}
+
 setInterval(function(){
-    ping()
-},10000);
+    if( navigator.onLine == false){
+        window.alert("you are offline");
+    }
+},5000);

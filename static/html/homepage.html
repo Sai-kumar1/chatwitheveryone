@@ -7,28 +7,20 @@
         <script src="static/js/ping.js"></script>
     </head>
     <body>
-        <h1>send and recieve</h1>
+        <h2>Send & Recieve</h2>
         <div>
-            <form action="javascript:" onsubmit="sendmsg()">
-                <p>
-                    <label for="to">To:</label>
-                    <input type="text" name="to" id="sendto" />
-                </p>
-                <p>
-                    <label for="from">from:</label>
-                    <input type="text" name="from" id="recfrom" />
-                </p>
-                <p>
-                    <label for="message">Message:</label>
-                    <input name="message" id="message"/>
-                </p>
-                <p>
-                    <input type="submit" value="Send" id="submitbutton"/>
-                </p>
-            </form>
+                <label for="from">from:</label>
+                <input type="text" name="from" id="recfrom" placeholder="enter you name & save"/>
+                <span><button id="saveformUser" onclick="pingTheServer()">save</button></span>
         </div>
         <div id="recontainer" >
             
         </div>
+            <p>
+                <label>to:</label>
+                <input  name="to" id="sendto" placeholder="enter reciever name"/>
+            </p>
+            <input name="message" id="message" placeholder="enter the message"/>
+            <span><input type="submit" value="send" id="submitbutton" onclick="sendmsg()"/></span>
     </body>
 </html>
