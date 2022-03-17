@@ -12,6 +12,8 @@ import (
 
 var messages map[string][]db.Message = make(map[string][]db.Message)
 
+var usersOnline map[string]bool = make(map[string]bool)
+
 func HomeHandler(w http.ResponseWriter, r *http.Request) {
 
 	http.ServeFile(w, r, "./static/html/homepage.html")
@@ -26,8 +28,9 @@ func SendMsgHandler(w http.ResponseWriter, r *http.Request) {
 		http.Error(w, er.Error(), http.StatusBadRequest)
 	}
 	
+	usersOnline[msg.From] = true
 	messages[msg.To] = append(messages[msg.To],msg)
-		fmt.Println(messages)
+	fmt.Println(messages)
 
 }
 
@@ -39,6 +42,7 @@ func RecMsgHandler(w http.ResponseWriter, r *http.Request) {
 		http.Error(w, er.Error(), http.StatusBadRequest)
 	}
 
+	usersOnline[user.To] = true
 	for i:=0;i<10;i++{
 
 		msgs := messages[user.To]
@@ -52,4 +56,10 @@ func RecMsgHandler(w http.ResponseWriter, r *http.Request) {
 		
 	}
 	
+}
+
+func UsersOnlineHandler(w http.ResponseWriter,r *http.Request){
+	users,_ := json.Marshal(usersOnline)
+	resData := string(users)
+	w.Write([]byte(resData))
 }
