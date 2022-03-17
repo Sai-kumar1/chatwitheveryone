@@ -5,13 +5,21 @@
         <title>send and recieve</title>
         <link rel="stylesheet" href="static/css/home.css">
         <script src="static/js/ping.js"></script>
+        <!-- <link rel="stylesheet" href="../css/home.css"> -->
+
+        <!-- test -->
+        <!-- <link rel="stylesheet" href="../css/home.css"> -->
+
+
     </head>
     <body>
         <h2>Send & Recieve</h2>
+        <div id="bodyLeft">
         <div>
                 <label for="from">from:</label>
-                <input type="text" name="from" id="recfrom" placeholder="enter you name & save"/>
-                <span><button id="saveformUser" onclick="pingTheServer()">save</button></span>
+                <input type="text" name="from" id="recfrom" placeholder="enter your name & save"/>
+                <span><button id="savefrom" onclick="pingTheServer()">save</button></span>
+                <img src="static/images/tick" id="tickimg" style="visibility: hidden;"/>
         </div>
         <div id="recontainer" >
             
@@ -22,5 +30,14 @@
             </p>
             <input name="message" id="message" placeholder="enter the message"/>
             <span><input type="submit" value="send" id="submitbutton" onclick="sendmsg()"/></span>
+        </div>
+        <div id="bodyRight">
+        <div id="online">
+            <label >Online:</label>
+            <div id="onlineUsers">
+                
+            </div>
+        </div>
+        </div>
     </body>
 </html>

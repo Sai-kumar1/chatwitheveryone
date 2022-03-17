@@ -72,7 +72,40 @@ body{
     background-color: rgba(0, 0, 0, 0.678);
     color: white;
     font-family: sans-serif;
+    /* display: flex; */
 }
 h2{
     text-align: center;
+}
+
+#online{
+    margin-right: 0px;
+}
+#onlineUsers{
+    border: 3px solid black;
+    border-radius: 10px;
+    text-align: center;
+    height:30rem;
+    overflow: scroll;
+}
+#user{
+    background-color: black;
+    /* width: min-content; */
+    position: relative;
+    padding: 1rem;
+    margin: 1rem;
+    cursor: pointer;
+    border-radius: 10px;
+}
+#bodyLeft{
+    width: 80%;
+    float:left;
+}
+#bodyRight{
+    width: 17%;
+    float:right;
+    
+}
+img{
+    width:1rem;
 }
