@@ -23,6 +23,7 @@ func main() {
 	router.HandleFunc("/", handlers.HomeHandler).Methods("GET")
 	router.HandleFunc("/sendmsg", handlers.SendMsgHandler).Methods("POST")
 	router.HandleFunc("/getmsg", handlers.RecMsgHandler).Methods("POST")
+	router.HandleFunc("/usersonline",handlers.UsersOnlineHandler).Methods("GET")
 
 	port := os.Getenv("PORT")
 	if port == "" {
