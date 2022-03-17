@@ -1,7 +1,6 @@
 package main
 
 import (
-
 	"chat/handlers"
 	"fmt"
 
@@ -16,14 +15,14 @@ import (
 func main() {
 
 	router := mux.NewRouter()
-	
+
 	fs := http.FileServer(http.Dir("./static"))
 	router.PathPrefix("/static/").Handler(http.StripPrefix("/static/", fs))
 
 	router.HandleFunc("/", handlers.HomeHandler).Methods("GET")
 	router.HandleFunc("/sendmsg", handlers.SendMsgHandler).Methods("POST")
 	router.HandleFunc("/getmsg", handlers.RecMsgHandler).Methods("POST")
-	router.HandleFunc("/usersonline",handlers.UsersOnlineHandler).Methods("GET")
+	router.HandleFunc("/usersonline", handlers.UsersOnlineHandler).Methods("GET")
 
 	port := os.Getenv("PORT")
 	if port == "" {
