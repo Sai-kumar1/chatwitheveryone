@@ -1,0 +1,110 @@
+
+#online{
+    margin-right: 0px;
+}
+#onlineUsers{
+    border: 3px solid black;
+    border-radius: 10px;
+    text-align: center;
+    height:30rem;
+    overflow: scroll;
+}
+#user{
+    background-color: black;
+    position: relative;
+    padding: 1rem;
+    margin: 1rem;
+    cursor: pointer;
+    border-radius: 10px;
+}
+#bodyLeft{
+    width: 80%;
+    float:left;
+}
+#bodyRight{
+    width: 17%;
+    float:right;
+    
+}
+img{
+    width:1rem;
+}
+#recontainer{
+    margin-bottom: 1rem;
+    margin-top: 1rem;
+    width: 60%;
+    height: 20rem;
+    border: 3px solid black;
+    overflow: scroll;
+    border-radius: 10px;
+    background-color: white;
+}
+msg{
+    display: flex;
+    width: min-content;
+    float: right;
+}
+#containerrec{
+    width: 100%;
+    display: flex;
+    justify-content: left;
+}
+#containersend{
+    width: 100%;
+    display: flex;
+    justify-content: right;
+}
+#from{
+    color: red;
+    font-weight: bold;
+    font-size: 13px;
+    text-align:left;
+}
+
+#message{
+    width: 47%;
+    height: 2rem;
+    border: 1px solid black;
+    border-radius: 10px;
+}
+#time{
+    color: blue;
+    font-size: 12px;
+}
+#msg{
+    background-color: grey;
+    width: max-content;
+    border-radius: 4px;
+    padding: 4px;
+}
+#submitbutton{
+    height: 2rem;
+    width:5%;
+}
+#left{
+    width: fit-content;
+    
+}
+#right{
+    width: fit-content;
+    
+}
+#sendto{
+    height: 2em;
+    border: 1px solid black;
+    border-radius: 10px;
+}
+#recfrom{
+    height: 2em;
+    border: 1px solid black;
+    border-radius: 10px;
+}
+body{
+    background-color: rgba(0, 0, 0, 0.678);
+    color: white;
+    font-family: sans-serif;
+    /* display: flex; */
+}
+h2{
+    text-align: center;
+}
