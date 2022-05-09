@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>send and recieve</title>
+        <!-- <link rel="stylesheet" href="static/css/home.css"> -->
+        <!-- <script src="static/js/ping.js"></script> -->
+        <!-- <link rel="stylesheet" href="../css/home.css"> -->
+
+        <!-- test -->
+        <link rel="stylesheet" href="../css/home.css"/>
+
+
+    </head>
+    <body>
+        <div class="home-header">
+            <div class="home-header-left">
+                <button id="logout-btn" title="logout"><img id="logout-img" src="../images/logout.png"/></button>
+                <button id="profile-btn" title="profile"><img id="profile-img" src="../images/dp.jpg"/></button>
+            </div>
+            <div class="home-header-right">
+                <h2>Chat with Everyone</h2>
+            </div>
+        </div>
+        <div class="chat-space">
+        
+            <div id="bodyLeft">
+                <div>
+                    <p>
+                        <label>to:</label>
+                        <label id="sendto" class="sendto active">Active User</label>
+                        <label class="sendto idle" >Idle User</label>
+                        <label class="sendto inactive" >Inactive User</label>
+                    </p>
+                </div>
+                <div id="recontainer"_++>
+                    <div id="containerrec">
+                        <msg id="recieved-msgbox">
+                            <div id="left">
+                                <p id="from">from user</p>
+                            </div>
+                            <div id="right">
+                                <p id="msg">message recieved <span id="time"> time </span></p>
+                            </div>
+                        </msg>
+                    </div>
+                    <div id="containersend">
+                        <msg id="sent-msgbox">
+                            <div id="left">
+                                <p id="from">to user</p>
+                            </div>
+                            <div id="right">
+                                <p id="msg">it is the msg<span id="time">time</span></p>
+                            </div>
+                        </msg>
+                    </div>
+                </div>
+                <div id="message-box">
+                    <div id="message-text">
+                        <div name="message" role="textbox" contenteditable="true" id="message" placeholder="enter the message"></div>
+                    </div>
+                    <div id="send-btn">
+                        <div id="empty"></div>
+                        <div><button id="submitbutton" onclick="sendmsg()" title="send"><img src="../images/send.png"/></button></div>
+                    </div>
+                </div>
+            </div>
+
+            <div id="bodyRight">
+            <div id="online">
+                <label>Contacts:</label>
+                <div id="contacts">
+                    <p id="user" onclick="textTo(this)" title="active" onclick="alert('it is ok')">
+                        <img id="status" src="../images/active.png" name="activeuser"/> Active Username
+                    </p>
+                    <p id="user" onclick="textTo(this)" title="idle">
+                        <img id="status" src="../images/idle.png" /> Idle Username
+                    </p>
+                    <p id="user" onclick="textTo(this)" title="inactive">
+                        <img id="status" src="../images/inactive.png" /> Inactive Username
+                    </p>
+                </div>
+            </div>
+            </div>
+        </div>
+        
+    </body>
+</html>

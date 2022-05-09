@@ -1,8 +1,14 @@
-
+body{
+    background-color: rgba(0, 0, 0, 0.678);
+    color: white;
+    font-family: sans-serif;
+    /* display: flex; */
+    font-family: 'Times New Roman', Times, serif;
+}
 #online{
     margin-right: 0px;
 }
-#onlineUsers{
+#contacts{
     border: 3px solid black;
     border-radius: 10px;
     text-align: center;
@@ -18,17 +24,60 @@
     cursor: pointer;
     border-radius: 10px;
 }
+.chat-space{
+    display: flex;
+    flex-direction: row;
+    margin: 3%;
+}
 #bodyLeft{
     width: 80%;
     float:left;
 }
 #bodyRight{
-    width: 17%;
+    width: 20em;
     float:right;
     
 }
-img{
-    width:1rem;
+#status{
+    width: 1em;
+}
+#profile-btn{
+    width: fit-content;
+    /* background-color: transparent; */
+    border-style: hidden;
+    cursor: pointer;
+    border-radius: 2em;
+    /* align-items: center; */
+    margin-top: 2%;
+    margin-left: 50%;
+}
+#profile-img{
+    /* width: 10%; */
+    height: 3em;
+    border-radius: 1cm;
+}
+#logout-btn{
+    width: fit-content;
+    /* background-color: transparent; */
+    border-style: hidden;
+    cursor: pointer;
+    border-radius: 1mm;
+}
+#logout-img{
+    /* width: 10%; */
+    height: 2em;
+}
+.home-header{
+    display: flex;
+    flex-direction: row;
+    /* width: 80%; */
+
+}
+.home-header-left{
+    width: 40%;
+}
+.home-header-right{
+    width: 60%;
 }
 #recontainer{
     margin-bottom: 1rem;
@@ -40,10 +89,15 @@ img{
     border-radius: 10px;
     background-color: white;
 }
-msg{
+#recieved-msgbox{
     display: flex;
-    width: min-content;
-    float: right;
+    justify-content: flex-start;
+    width: 80%;
+}
+#sent-msgbox{
+    display: flex;
+    justify-content: flex-end;
+    width: 80%;
 }
 #containerrec{
     width: 100%;
@@ -55,57 +109,99 @@ msg{
     display: flex;
     justify-content: right;
 }
+
+#left{
+    width: auto;
+    
+}
+#right{
+    width: auto;
+    
+}
 #from{
     color: red;
     font-weight: bold;
     font-size: 13px;
     text-align:left;
 }
-
+#message-box{
+    width: 100%;
+    display: flex;
+}
+#message-text{
+    width: 60%;
+    overflow-y: auto;
+    max-height: 100px;
+}
+#send-btn{
+    display: flex;
+    flex-direction: column;
+}
+#empty{
+    height:70%;
+}
+#message:empty::before{
+    /* border: 1px solid black; */
+    content: attr(placeholder);
+    opacity: 0.6;
+}
 #message{
-    width: 47%;
-    height: 2rem;
-    border: 1px solid black;
-    border-radius: 10px;
+    background-color: white;
+    color: black;
+    width: 100%;
+    /* height: 3rem; */
+    border-radius: 2mm;
+    /* overflow-y: auto; */
+    /* overflow-wrap: break-word; */
+    resize: none;
+    padding-top: 1em;
+    padding-bottom: 1em;
 }
 #time{
-    color: blue;
-    font-size: 12px;
+    color: rgb(45, 49, 46);
+    font-size: 1em;
+    float:right;
+    margin-top: 1em;
 }
 #msg{
     background-color: grey;
-    width: max-content;
+    width: auto;
     border-radius: 4px;
     padding: 4px;
+    overflow-y: auto;
+    word-wrap: break-word;
+}
+#submitbutton img{
+    height: 3rem;
 }
 #submitbutton{
-    height: 2rem;
-    width:5%;
-}
-#left{
+    /* height: 2rem; */
+    /* width:7%; */
     width: fit-content;
-    
+    border-radius:2em;
+    background-color: rgb(209, 203, 203);
+    border-style: none;
+    cursor: pointer;
 }
-#right{
-    width: fit-content;
-    
-}
-#sendto{
+.sendto{
     height: 2em;
-    border: 1px solid black;
-    border-radius: 10px;
+    font-weight: bold;
+    /* border: 1px solid black; */
+    /* border-radius: 10px; */
+}
+.active{
+    color: rgb(72, 226, 72);
+    
+}
+.idle{
+    color: orange;
+}
+.inactive{
+    color:rgb(255, 46, 46);
+
 }
 #recfrom{
     height: 2em;
     border: 1px solid black;
     border-radius: 10px;
-}
-body{
-    background-color: rgba(0, 0, 0, 0.678);
-    color: white;
-    font-family: sans-serif;
-    /* display: flex; */
-}
-h2{
-    text-align: center;
 }
